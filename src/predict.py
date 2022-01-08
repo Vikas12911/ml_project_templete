@@ -22,7 +22,7 @@ def predict():
         encoders = joblib.load(os.path.join('models' , f'{MODEL}_{FOLD}_label_encoder.pkl'))
         cols = joblib.load(os.path.join('models' , f'{MODEL}_{FOLD}_columns.pkl'))
         for c in encoders:
-            print(c) 
+            print('My encoder is',c) 
             lbl = encoders[c]
             df.loc[:,c] = lbl.transform(df[c].values.tolist())
 
